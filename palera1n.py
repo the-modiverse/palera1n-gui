@@ -29,23 +29,44 @@ root.iconphoto(False, tk.PhotoImage(file='Resources/palepa1n.png'))
 LAST_CONNECTED_UDID = ""
 LAST_CONNECTED_IOS_VER = ""
 
-def detectDevice():
+def restorerootless():
     root.iconphoto(False, tk.PhotoImage(file='Resources/palepa1n.png'))
     messagebox.showinfo("DFU Helper Information", "Look into the terminal window for the DFU Helper.\nAfter the DFU Helper has finished, it will approximately take around 1-2 minutes to restore rootfs.")
     print("Beginning restore rootfs")
     os.system("./Resources/palera1n --force-revert ")
+    print("Finished")
     
-def startcheckra1n():
+def jbrootless():
+
+    root.iconphoto(False, tk.PhotoImage(file='Resources/palepa1n.png'))
+    messagebox.showinfo("DFU Helper Information", "Look into the terminal window for the dfuhelper.\nAfter the dfuhelper has finished, it will approximately take around 1-2 minutes to jailbreak.")
+    
+    print("Beginning ROOTLESS jailbreak..")
+    os.system("./Resources/palera1n ")
+    print("Finished")
+    #show message to jb
+    messagebox.showinfo("palera1n", "Hopefully the jailbreak has been done successfully.\nEnjoy!")
+    root.iconphoto(False, tk.PhotoImage(file='Resources/palepa1n.png'))
+    
+def restorerootful():
 
     root.iconphoto(False, tk.PhotoImage(file='Resources/palepa1n.png'))
     messagebox.showinfo("DFU Helper Information", "Look into the terminal window for the dfuhelper.\nAfter the dfuhelper has finished, it will approximately take around 1-2 minutes to jailbreak.")
     
     print("Loading jb script...")
-    os.system("./Resources/palera1n ")
-    print("Ran jb script.\n")
-    #show message to jb
+    os.system("./Resources/palera1n --force-revert -f ")
+    print("Finished")
     messagebox.showinfo("palera1n", "Hopefully the jailbreak has been done successfully.\nEnjoy!")
-    root.iconphoto(False, tk.PhotoImage(file='settings.gif'))
+    root.iconphoto(False, tk.PhotoImage(file='Resources/palepa1n.png'))
+
+def fixpalera1nnoperms():
+
+    root.iconphoto(False, tk.PhotoImage(file='Resources/palepa1n.png'))
+    messagebox.showinfo("DFU Helper Information", "Look into the terminal window for the dfuhelper.\nAfter the dfuhelper has finished, it will approximately take around 1-2 minutes to jailbreak.")
+    
+    print("Loading jb script...")
+    os.system("chmod +x /Resources/palera1n")
+    print("fixed")
     
 
 def quitProgram():
@@ -65,8 +86,8 @@ mainText.place(x=10, y=5)
 
 #label
 my_label3 = Label(frame,
-                 text = "With <3 from palera1n team")
-my_label3.place(x=10, y=220)
+                 text = "With 💖 from palera1n team")
+my_label3.place(x=10, y=210)
 
 my_label4 = Label(frame,
                  text = "Made by: itsnebulalol, mineek, nathan, llsc12, guacaplushy, nyuszika7h, asdfugil, \ndora2ios, elihwyma, 0x7ff, flowerible, Azreal et al.", font=('Helveticabold', 12))
@@ -76,17 +97,19 @@ my_label5 = Label(frame,
                  text = "Thanks to: F121Live, m1stadev, mass1ve-err0r, TheRealKeto, CRKatri, 1Conan, \ntihmstar, xerub, Cryptic, sbingner, Serena, libimobiledevice y nikias.", font=('Helveticabold', 12))
 my_label5.place(x=10, y=160)
 
-
+my_label5 = Label(frame,
+                 text = "Do not ask for support with this GUI in the palera1n Discord server!", font=('Helveticabold', 10))
+my_label5.place(x=80, y=230)
 
 cButton1 = tk.Button(frame,
                    text="Restore your system",
-                   command=detectDevice,
+                   command=restorerootless,
                    state="normal")
 cButton1.place(x=10, y=50)
 
 cButton2 = tk.Button(frame,
                    text="Jailbreak rootless",
-                   command=startcheckra1n,
+                   command=jbrootless,
                    state="normal")
 cButton2.place(x=10, y=80)
 
