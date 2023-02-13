@@ -1,6 +1,4 @@
-# palera1n-c GUI
 
-## Getting the GUI up and running
 
 # Normal Installation Method
 1. Go to the releases page
