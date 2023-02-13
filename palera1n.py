@@ -90,7 +90,7 @@ my_label3 = Label(frame,
 my_label3.place(x=10, y=210)
 
 my_label4 = Label(frame,
-                 text = "Made by: itsnebulalol, mineek, nathan, llsc12, guacaplushy, nyuszika7h, asdfugil, \ndora2ios, elihwyma, 0x7ff, flowerible, Azreal et al.", font=('Helveticabold', 12))
+                 text = "Made by: itsnebulalol, mineek, nathan, llsc12, guacaplushy, 0xallie, asdfugil, \ndora2ios, elihwyma, 0x7ff, flowerible, Azreal et al.", font=('Helveticabold', 12))
 my_label4.place(x=10, y=120)
 
 my_label5 = Label(frame,
